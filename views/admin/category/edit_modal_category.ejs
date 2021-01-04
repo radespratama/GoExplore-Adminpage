@@ -1,0 +1,26 @@
+<!-- Modal -->
+<div class="modal fade" id="edit-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Edit Category</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="/admin/category?_method=PUT" method="POST">
+                    <div class="form-group">
+                        <label for="editName">Name Category</label>
+                        <input type="text" class="form-control nameCategory" name="name" id="editName" required> 
+                    </div>
+                    <div class="d-flex py-4 justify-content-end">
+                        <input type="hidden" class="idCategory" name="id">
+                        <button type="button" class="btn btn-secondary mr-2" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-warning text-white">Edit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

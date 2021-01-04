@@ -1,0 +1,46 @@
+<div class="card-title d-flex justify-content-end">
+    <button type="button" class="btn btn-primary d-flex align-items-center" data-toggle="modal" data-target="#add-modalBank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+        </svg>
+    </button>
+</div>
+<table id="datatables01" class="table table-striped table-bordered" style="width:100%">
+    <thead>
+        <tr>
+            <th>No</th>
+            <th>Name Bank</th>
+            <th>Nomor Rekening</th>
+            <th>Name</th>
+            <th>Image</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% for(let i = 0;i < bank.length; i++){ %>
+            <tr>
+                <td><%= i + 1 %></td>
+                <td><%= bank[i].nameBank %></td>
+                <td><%= bank[i].nomorRekening %></td>
+                <td><%= bank[i].name %></td>
+                <td class="d-flex justify-content-center">
+                    <img src="http://localhost:5000/<%= bank[i].imageUrl %>" alt="Bukti Transfer" height="50px">
+                </td>
+                <td>
+                    <form action="/admin/bank/<%= bank[i].id %>?_method=DELETE" method="POST">
+                        <a href="javascript:void(0)" type="button" class="btn btn-warning btn-sm button-update" data-id="<%= bank[i].id %>" data-name="<%= bank[i].name %>" data-nameBank="<%= bank[i].nameBank %>" data-nomorRekening="<%= bank[i].nomorRekening %>">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="d-flex justify-content-center align-items-center" width="18" height="18" fill="white" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
+                            </svg>
+                        </a>
+                        <button href="" type="submit" class="btn btn-danger btn-sm delete">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="d-flex justify-content-center align-items-center" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                            </svg>
+                        </button>
+                    </form>
+                </td>
+            </tr>
+        <% } %>
+    </tbody>
+</table>

@@ -1,0 +1,37 @@
+<!-- Modal -->
+<div class="modal fade" id="add-modalBank" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add Bank</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="/admin/bank" method="POST" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Bank Name</label>
+                        <input type="text" class="form-control" name="nameBank" placeholder="Enter Bank Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Nomor Rekening</label>
+                        <input type="number" class="form-control" name="nomorRekening" placeholder="Enter Nomor Rekening" maxlength="16" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Name</label>
+                        <input type="text" class="form-control" name="name" placeholder="Enter Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Upload File</label>
+                        <input type="file" class="form-control" name="image" placeholder="Enter Name" required>
+                    </div>
+                    <div class="d-flex py-4 justify-content-end">
+                        <button type="button" class="btn btn-secondary mr-2" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Add</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

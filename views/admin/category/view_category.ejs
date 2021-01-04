@@ -1,0 +1,43 @@
+<%- include('../../parts/header.ejs') %>
+
+    <%- include('../../parts/sidebar.ejs') %>
+
+    <%- include('../../parts/navbar.ejs') %>
+
+<div class="lime-container">
+    <div class="lime-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="page-title">
+                        <nav aria-label="breadcrumb">
+                          <ol class="breadcrumb breadcrumb-separator-1">
+                            <li class="breadcrumb-item"><a href="/admin/dashboard">Dashboard</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Category</li>
+                          </ol>
+                        </nav>
+                        <h3>Category</h3>
+                        <p class="page-desc">Category tables for list type travel and tourism</p>
+                    </div>
+
+                    <%- include('../../parts/notif.ejs') %>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl">
+                    <div class="card">
+                        <div class="card-body">
+                            
+                            <%- include('./tables_category.ejs') %>
+
+                        </div>
+                    </div>
+                </div>
+            </div>  
+        </div>
+    </div>
+</div>
+<%- include('./add_modal_category.ejs') %>
+<%- include('./edit_modal_category.ejs') %>
+<%- include('../../parts/script.ejs') %>
