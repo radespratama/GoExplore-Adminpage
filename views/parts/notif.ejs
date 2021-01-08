@@ -1,5 +1,5 @@
 <% if(alert.message != "") { %>
-    <div class="alert alert-<%= alert.status %> alert-dismissible fade show" role="alert">
+    <div class="alert alert-<%= alert.status %> alert-dismissible fade show" role="alert" style="position: absolute;z-index: 100;">
         <strong><%= alert.type %></strong> <%= alert.message %>.
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>

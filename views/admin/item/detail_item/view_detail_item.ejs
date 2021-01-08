@@ -1,0 +1,68 @@
+<%- include('../../../parts/header.ejs') %>
+
+    <%- include('../../../parts/sidebar.ejs') %>
+
+    <%- include('../../../parts/navbar.ejs') %>
+
+<div class="lime-container">
+    <div class="lime-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="page-title">
+                        <nav aria-label="breadcrumb">
+                          <ol class="breadcrumb breadcrumb-separator-1">
+                            <li class="breadcrumb-item"><a href="/admin/dashboard">Dashboard</a></li>
+                            <li class="breadcrumb-item"><a href="/admin/item">Items</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Details Item</li>
+                          </ol>
+                        </nav>
+                        <h3>List Detail Item Travels</h3>
+                        <p class="page-desc">Items tables for list all travel and tourism in Indonesia and others</p>
+                    </div>
+
+                    <%- include('../../../parts/notif.ejs') %>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl">
+                    <div class="card">
+                        <div class="card-body">
+
+                            <div class="d-flex justify-content-end">
+                                <a href="/admin/item" class="btn btn-dark btn-lg text-white d-flex align-items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="mr-2" width="19" height="19" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18" />
+                                    </svg>
+                                    Back
+                                </a>
+                            </div>
+                            
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#show-feature" role="tab" aria-controls="show-feature" aria-selected="true">Show Feature</a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#add-activity" role="tab" aria-controls="profile" aria-selected="false">Add Activity</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" id="show-feature" role="tabpanel" aria-labelledby="home-tab">
+                                    <%- include('./show_featured.ejs') %>
+                                </div>
+                                <div class="tab-pane fade" id="add-activity" role="tabpanel" aria-labelledby="profile-tab">
+                                    <%- include('./show_activity.ejs') %>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>  
+        </div>
+    </div>
+</div>
+<%- include('./edit_modal_featured.ejs') %>
+<%- include('./edit_modal_activity.ejs') %>
+<%- include('../../../parts/script.ejs') %>

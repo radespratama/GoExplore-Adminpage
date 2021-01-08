@@ -1,0 +1,35 @@
+  <%- include('./parts/header.ejs') %>
+
+  <section class="login-container">
+      <div class="container">
+          <%- include('./parts/notif.ejs') %>
+          <div class="wrapper">
+              <div class="row lfy justify-content-center">
+                  <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+                      <div class="card login-box">
+                          <div class="card-body">
+                              <h5 class="card-title">Sign In</h5>
+                              <form action="/admin/signin" method="POST">
+                                  <div class="form-group">
+                                      <input type="text" class="form-control" 
+                                      name="username" placeholder="Enter Username" required>
+                                  </div>
+                                  <div class="form-group">
+                                      <input type="password" name="password" class="form-control" placeholder="Password" required>
+                                  </div>
+                                  <div class="custom-control custom-checkbox form-group">
+                                      <input type="checkbox" class="custom-control-input" id="exampleCheck1">
+                                      <label class="custom-control-label" for="exampleCheck1">Remember</label>
+                                  </div>
+                                  <button type="submit" class="btn btn-primary float-right m-l-xxs">Sign In</button>
+                                  <a href="#" class="btn btn-secondary float-right">Sign Up</a>
+                              </form>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+<%- include('./parts/script.ejs') %>

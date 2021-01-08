@@ -1,0 +1,64 @@
+<div class="row">
+    <div class="col-md-4 mt-4">
+        <form action="/admin/item/add/activity" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Name Activity</label>
+                <input type="text" class="form-control" name="name" placeholder="Enter Activity Name" required>
+                <small id="emailHelp" class="form-text text-muted">Awali Dengan Huruf Kapital!</small>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Type</label>
+                <input type="text" class="form-control" name="type" placeholder="Enter Type" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Upload File</label>
+                <input type="file" class="form-control" name="image" required>
+            </div>
+            <div class="d-flex py-4 justify-content-start">
+                <input type="hidden" value="<%= itemId %>" name="itemId">
+                <button type="submit" class="btn btn-primary">Add Activity</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-8 mt-4">
+        <div class="my-4"></div>
+        <table id="datatables01" class="table table-striped table-bordered" style="width:100%">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Activity Name</th>
+                    <th>Type</th>
+                    <th>Image Activity</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(let i = 0;i < activity.length; i++){ %>
+                    <tr>
+                        <td><%= i + 1 %></td>
+                        <td><%= activity[i].name %></td>
+                        <td><%= activity[i].type %></td>
+                        <td class="d-flex justify-content-center">
+                            <img src="http://localhost:5000/<%= activity[i].imageUrl %>" alt="Image activity" height="60px">
+                        </td>
+                        <td>
+                            <form action="/admin/item/<%= itemId %>/activity/<%= activity[i].id %>?_method=DELETE" method="POST">
+                                <a href="javascript:void(0);" type="button" class="btn btn-warning btn-sm button-update"
+                                data-id="<%= activity[i].id %>" data-name="<%= activity[i].name %>" data-type="<%= activity[i].type %>">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="white" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                                    </svg>
+                                </a>
+                                <button href="" type="submit" class="btn btn-danger btn-sm delete">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                    </svg>
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+</div>

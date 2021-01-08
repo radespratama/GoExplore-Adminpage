@@ -1,0 +1,28 @@
+<div class="d-flex justify-content-end">
+    <a href="/admin/item" class="btn btn-dark btn-lg text-white d-flex align-items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="mr-2" width="19" height="19" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18" />
+        </svg>
+        Back
+    </a>
+</div>
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#show-image" role="tab" aria-controls="show-image" aria-selected="true">Show Image</a>
+    </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="show-image" role="tabpanel" aria-labelledby="home-tab">
+        <div class="row mt-5">
+            <% for (let x = 0;x < item.imageId.length;x++){ %>
+                <div class="col-md-4">
+                    <div class="card shadow-sm mb-4">
+                        <div class="card-body">
+                            <img src="http://localhost:5000/<%= item.imageId[x].imageUrl %>" alt="Images" style="width: 100%;display: block;">
+                        </div>
+                    </div>
+                </div>
+            <% } %>
+        </div>
+    </div>
+</div>

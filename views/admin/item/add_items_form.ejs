@@ -8,7 +8,11 @@
             </div>
             <div class="form-group col-md-3">
                 <label for="inputPassword4">Price</label>
-                <input type="number" class="form-control" name="price" id="price" placeholder="Enter Price" required>
+                <input name="price" id="price" placeholder="Enter Price" class="form-control"
+                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                type = "number"
+                maxlength = "3" required
+                />
             </div>
             <div class="form-group col-md-3">
                 <label for="inputCity">City</label>
@@ -18,7 +22,7 @@
         <div class="form-row">
             <div class="form-group col-md-7">
                 <label for="name">Description</label>
-                <textarea name="aboutForm" class="form-control" id="about" rows="3"></textarea>
+                <textarea name="about" class="form-control" id="about" rows="3"></textarea>
             </div>
             <div class="form-group col-md-4">
                 <label for="name">Category</label>

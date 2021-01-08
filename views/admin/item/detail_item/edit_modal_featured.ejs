@@ -1,0 +1,36 @@
+<!-- Modal -->
+<div class="modal fade" id="edit-modal02" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Edit Features</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="/admin/item/update/feature?_method=PUT" method="POST" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Name Features</label>
+                        <input type="text" class="form-control name-dual" name="name" placeholder="Enter Features Name" required>
+                        <small id="emailHelp" class="form-text text-muted">Awali Dengan Huruf Kapital!</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Quantity</label>
+                        <input type="number" class="form-control qty" name="qty" placeholder="Enter Quantity" maxlength="3" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Upload File</label>
+                        <input type="file" class="form-control" name="image">
+                    </div>
+                    <div class="d-flex py-4 justify-content-end">
+                        <input type="hidden" class="id" name="id">
+                        <input type="hidden" value="<%= itemId %>" name="itemId">
+                        <button type="button" class="btn btn-secondary mr-2" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-warning text-white">Edit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
