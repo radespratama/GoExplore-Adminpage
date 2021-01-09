@@ -2,7 +2,7 @@ var seeder = require('mongoose-seed');
 var mongoose = require('mongoose');
 
 // Connect to MongoDB via Mongoose
-seeder.connect('mongodb://localhost:27017/db_goexplore', {
+seeder.connect('mongodb+srv://db_goexplore:ProPlayer@cluster0.sila4.mongodb.net/db_goexplore?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useCreateIndex: true,
     useFindAndModify: true,

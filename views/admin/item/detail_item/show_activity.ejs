@@ -39,7 +39,7 @@
                         <td><%= activity[i].name %></td>
                         <td><%= activity[i].type %></td>
                         <td class="d-flex justify-content-center">
-                            <img src="http://localhost:5000/<%= activity[i].imageUrl %>" alt="Image activity" height="60px">
+                            <img src="https://goexplore-admin.herokuapp.com/<%= activity[i].imageUrl %>" alt="Image activity" height="60px">
                         </td>
                         <td>
                             <form action="/admin/item/<%= itemId %>/activity/<%= activity[i].id %>?_method=DELETE" method="POST">

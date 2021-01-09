@@ -8,7 +8,7 @@ const session = require('express-session')
 const flash = require('connect-flash');
 
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/db_goexplore', {
+mongoose.connect('mongodb+srv://db_goexplore:ProPlayer@cluster0.sila4.mongodb.net/db_goexplore?retryWrites=true&w=majority', {
 useNewUrlParser: true,
 useUnifiedTopology: true,
 useCreateIndex: true,
