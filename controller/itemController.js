@@ -126,7 +126,7 @@ module.exports = {
                 .populate({path : 'categoryId', select: 'id name'});
 
                 if(req.files.length > 0){
-                    for(let i = 0; i < item?.imageId?.length; i++){
+                    for(let i = 0; i < item.imageId.length; i++){
                         const imageUpdate = await Image.findOne({_id:item.imageId[i]._id});
                         await fs.unlink(path.join(`public/${imageUpdate.imageUrl}`));
                         imageUpdate.imageUrl = `images/${req.files[i].filename}`;

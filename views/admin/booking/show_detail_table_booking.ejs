@@ -5,7 +5,7 @@
             <div class="d-flex">
 
                 <% if(booking.payments.status == 'Proses') {%>
-                    <form action="/admin/booking/<%= booking.id %>/confirmation?_method=PUT" method="POST">
+                    <form action="/admin/booking/<%= booking.id %>/confirmation_method=PUT" method="POST">
                         <button type="submit" class="btn btn-success btn-sm delete text-white py-2 my-3 mr-3">
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
@@ -13,7 +13,7 @@
                              Confirmation
                         </button>
                     </form>
-                    <form action="/admin/booking/<%= booking.id %>/reject?_method=PUT" method="POST">
+                    <form action="/admin/booking/<%= booking.id %>/reject_method=PUT" method="POST">
                         <button type="submit" class="btn btn-danger btn-sm delete text-white py-2 my-3">
                             <svg xmlns="http://www.w3.org/2000/svg" height="18" width="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
@@ -47,11 +47,11 @@
             </thead>
             <tbody>
                 <tr>
-                    <td><%= booking?.memberId?.firstName ?? 'Member' %> <%= booking?.memberId?.lastName ?? 'Name' %></td>
-                    <td><%= booking?.itemId?.title ?? 'Destination Name' %></td>
-                    <td><%= booking?.payments?.bankFrom ?? 'Bank Name' %></td>
-                    <td><%= booking?.total ?? 0 %></td>
-                    <td>$ <%= booking?.itemId?.price ?? 0 %></td>
+                    <td><%= booking.memberId.firstName %> <%= booking.memberId.lastName %></td>
+                    <td><%= booking.itemId.title %></td>
+                    <td><%= booking.payments.bankFrom %></td>
+                    <td><%= booking.total %></td>
+                    <td>$ <%= booking.itemId.price %></td>
                 </tr>
             </tbody>
         </table>
