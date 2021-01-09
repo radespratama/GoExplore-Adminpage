@@ -88,7 +88,7 @@
                                             <tr>
                                                 <td><%= booking[x].invoice %></td>
                                                 <td><%= booking[x].itemId.title %></td>
-                                                <td>$ <%= booking[x].itemId.price ?? 0 %></td>
+                                                <td>$ <%= booking[x].itemId.price %></td>
 
                                                 <% if(booking[x].payments.status == 'Accept') {%>
                                                     <td><span class="text-badge badge badge-success py-2 px-2 font-weight-normal"><%= booking[x].payments.status %></span></td>
