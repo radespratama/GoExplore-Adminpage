@@ -1,16 +1,25 @@
 const Users = require('../models/Users')
+const Member = require('../models/Member')
+const Booking = require('../models/Booking')
+const Item = require('../models/Item')
 const path = require('path');
 const bcrypt = require('bcrypt');
 
 module.exports = {
-    viewDashboard :  (req, res)=> {
+    viewDashboard : async (req, res)=> {
         try {
+            const member = await Member.find();
+            const booking = await Booking.find();
+            const item = await Item.find();
             res.render('admin/dashboard/view_dashboard', {
                 title: "Go Explore | Dashboard",
-                user: req.session.user
-            })
+                user: req.session.user,
+                member,
+                booking,
+                item
+            });
         } catch (error) {
-            
+            res.redirect('/admin/dashboard');
         }
     },
     viewSignin : async(req, res)=> {
@@ -62,16 +71,8 @@ module.exports = {
         }
     },
     actionLogout : async(req, res)=>{
-        req.session.destroy();
-        res.redirect('/admin/signin');
+        req.session.destroy((err) => {
+            res.redirect('/admin/signin');
+        });
     },
-
-    
-
-    viewBooking : (req, res) => {
-        res.render('admin/booking/view_booking', {
-            user: req.session.user
-        })
-    }
-
 };

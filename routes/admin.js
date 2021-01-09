@@ -5,6 +5,7 @@ const bankController = require('../controller/bankController')
 const itemController = require('../controller/itemController')
 const featureController = require('../controller/featureController')
 const activityController = require('../controller/activityController');
+const bookingController = require('../controller/bookingController')
 const auth = require('../middlewares/auth')
 const { uploadSingle, uploadMultiple } = require('../middlewares/multer')
 
@@ -44,6 +45,11 @@ router.post('/item/add/activity',uploadSingle, activityController.addActivity);
 router.put('/item/update/activity', uploadSingle, activityController.editActivity);
 router.delete('/item/:itemId/activity/:id', activityController.delActivity)
 
-router.get('/booking', adminController.viewBooking)
+
+router.get('/booking', bookingController.viewBooking)
+router.get('/booking/:id', bookingController.showDetailBooking)
+router.put('/booking/:id/confirmation', bookingController.actionConfirmation);
+router.put('/booking/:id/reject', bookingController.actionReject);
+
 
 module.exports = router

@@ -1,3 +1,9 @@
 .modal-open {
     padding-right: 0 !important;
 }
+.lime-container .table-responsive .table th {
+    border-bottom: 1px solid#DEE2E6;
+}
+.lime-container .table-responsive .text-badge {
+    font-size: 12px;
+}

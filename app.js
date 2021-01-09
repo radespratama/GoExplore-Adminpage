@@ -18,6 +18,7 @@ useFindAndModify: false
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const adminRouter = require('./routes/admin')
+const apiRouter = require('./routes/api')
 
 const app = express();
 
@@ -43,7 +44,9 @@ app.use('/template', express.static(path.join(__dirname, 'public/theme')))
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+
 app.use('/admin', adminRouter)
+app.use('/api/v1/member', apiRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

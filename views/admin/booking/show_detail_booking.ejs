@@ -1,0 +1,42 @@
+<%- include('../../parts/header.ejs') %>
+
+    <%- include('../../parts/sidebar.ejs') %>
+
+    <%- include('../../parts/navbar.ejs') %>
+
+<div class="lime-container">
+    <div class="lime-body">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="page-title">
+                        <nav aria-label="breadcrumb">
+                          <ol class="breadcrumb breadcrumb-separator-1">
+                            <li class="breadcrumb-item"><a href="/admin/dashboard">Dashboard</a></li>
+                            <li class="breadcrumb-item"><a href="/admin/booking">Booking</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Details Booking</li>
+                          </ol>
+                        </nav>
+                        <h3>Details Booking</h3>
+                        <p class="page-desc">Booking tables for list booking tour</p>
+
+                        <%- include('../../parts/notif.ejs') %>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl">
+                    <div class="card">
+                        <div class="card-body">
+                            
+                            <%- include('./show_detail_table_booking.ejs') %>
+
+                        </div>
+                    </div>
+                </div>
+            </div>  
+        </div>
+    </div>
+</div>
+<%- include('../../parts/script.ejs') %>

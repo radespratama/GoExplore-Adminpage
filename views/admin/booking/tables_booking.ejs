@@ -1,17 +1,33 @@
-<h5 class="card-title mr-auto">Basic</h5>
 <table id="datatables01" class="table table-striped table-bordered" style="width:100%">
     <thead>
         <tr>
             <th>No</th>
+            <th>Invoice</th>
             <th>Date</th>
             <th>Title</th>
-            <th>Name Member</th>
-            <th>Name Bank</th>
+            <th>Nama Member</th>
             <th>Status</th>
             <th>Action</th>
         </tr>
     </thead>
     <tbody>
-        
+        <% for(let i = 0;i < booking.length; i++){ %>
+            <tr>
+                <td><%= i + 1 %></td>
+                <td>#<%= booking[i].invoice %></td>
+                <td><%= booking[i].bookingStartDate.toLocaleString().split(',')[0] %>  s/d  <%= booking[i].bookingEndDate.toLocaleString().split(',')[0] %></td>
+                <td><%= booking[i].itemId.title %></td>
+                <td><%= booking[i].memberId.firstName %> <%= booking[i].memberId.lastName %></td>
+                <td><%= booking[i].payments.status %></td>
+                <td>
+                    <a href="/admin/booking/<%= booking[i].id %>" class="btn btn-warning btn-sm button-update text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="d-flex justify-content-center align-items-center" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                        </svg>
+                    </a>
+                </td>
+            </tr>
+        <% } %>
     </tbody>
 </table>

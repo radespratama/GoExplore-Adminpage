@@ -29,6 +29,15 @@ $('#datatables02').on('click', '.button-update', function(){
     $('#edit-modal02').modal('show');
     $('.id').val(id);
     $('.name-dual').val(name);
-    $('.qty').val(qty);
-    
+    $('.qty').val(qty); 
 });
+
+$(document).ready(function(){
+    $('#datatables03').DataTable({
+        "bPaginate": false,
+        "bLengthChange": false,
+        "bFilter": false,
+        "bInfo": false,
+        "bAutoWidth": false
+    });
+})
